@@ -25,7 +25,7 @@ steps:
   inputs:
     scanType: 'polaris'
     polarisServerUrl: 'https://poc.polaris.blackduck.com'
-    polarisAccessToken: 's4jpgckfat47f3dcaebrc486lgs721o64vtk2f5cnenldhiokukllhc63rjtqp22b56h3e2s7dts6'
+    polarisAccessToken: '$(POLARIS_TOKEN)'
     polarisAssessmentTypes: 'SAST'
     polarisWaitForScan: false
     polarisApplicationName: 'Evan Onboard'
