@@ -19,5 +19,15 @@ steps:
 
 - script: |
     cd data_structures-II/06-BST
-    make
-  displayName: 'make'
+  displayName: 'Change directory'
+
+- task: BlackDuckSecurityScan@2
+  inputs:
+    scanType: 'polaris'
+    polarisServerUrl: 'https://poc.polaris.blackduck.com'
+    polarisAccessToken: 's4jpgckfat47f3dcaebrc486lgs721o64vtk2f5cnenldhiokukllhc63rjtqp22b56h3e2s7dts6'
+    polarisAssessmentTypes: 'SAST'
+    polarisWaitForScan: false
+    polarisApplicationName: 'Evan Onboard'
+    polarisProjectName: 'C++'
+    coverityBuildCommandForPolaris: 'make'
