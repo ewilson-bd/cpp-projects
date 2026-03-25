@@ -28,6 +28,7 @@ steps:
     polarisServerUrl: 'https://poc.polaris.blackduck.com'
     polarisAccessToken: '$(POLARIS_TOKEN)'
     polarisAssessmentTypes: 'SAST'
+    polarisProjectDirectory: 'data_structures-II/06-BST'
     polarisWaitForScan: false
     polarisApplicationName: 'Evan Onboard'
     polarisProjectName: 'C++'
