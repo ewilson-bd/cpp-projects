@@ -8,8 +8,10 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+#variables:
+#- group: Polaris_Evan
 variables:
-- group: Polaris_Evan
+ - group: SCA_Evan
 
 steps:
 - task: JavaToolInstaller@0
@@ -22,14 +24,14 @@ steps:
     cd data_structures-II/06-BST
   displayName: 'Change directory'
 
-- task: BlackDuckSecurityScan@2
-  inputs:
-    scanType: 'polaris'
-    polarisServerUrl: 'https://poc.polaris.blackduck.com'
-    polarisAccessToken: '$(POLARIS_TOKEN)'
-    polarisAssessmentTypes: 'SAST'
-    polarisProjectDirectory: 'data_structures-II/06-BST'
-    polarisWaitForScan: false
-    polarisApplicationName: 'Evan Onboard'
-    polarisProjectName: 'C++'
-    coverityBuildCommandForPolaris: 'make'
+- script: |
+    pip install blackduck-c-cpp
+    blackduck-c-cpp
+  displayName: 'Install CPP tool'
+
+
+#- task: BlackDuckSecurityScan@2
+#  inputs:
+#    scanType: 'blackducksca'
+#    blackduckScaUrl: 'https://expressonboarding.app.blackduck.com/'
+#    blackduckScaToken: '$(AccessToken)'
