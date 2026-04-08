@@ -26,7 +26,7 @@ steps:
 
 - script: |
     pip install blackduck-c-cpp
-    blackduck-c-cpp
+    blackduck-c-cpp -bc "make"
   displayName: 'Install CPP tool'
 
 
