@@ -25,9 +25,10 @@ steps:
   displayName: 'Change directory'
 
 - script: |
-    echo The access token is: $(AccessToken)
+    export accessToken=$(AccessToken)
+    directory=$(pwd)
     pip install blackduck-c-cpp
-    blackduck-c-cpp -bc "make" -d "./" -proj "Evan" -vers "cpp" -bd "https://expressonboarding.app.blackduck.com"
+    blackduck-c-cpp -bc "make" -d $directory -proj "Evan" -vers "cpp" -bd "https://expressonboarding.app.blackduck.com"
   displayName: 'Install CPP tool'
 
 
