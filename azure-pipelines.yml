@@ -22,10 +22,6 @@ steps:
 
 - script: |
     cd data_structures-II/06-BST
-  displayName: 'Change directory'
-
-- script: |
-    ls
     directory=$(pwd)
     pip install blackduck-c-cpp
     blackduck-c-cpp -bc "make" -d $directory -proj "Evan" -vers "cpp" -bd "https://expressonboarding.app.blackduck.com" -a $(AccessToken)
