@@ -20,16 +20,18 @@ steps:
     jdkArchitectureOption: 'x64'
     jdkSourceOption: 'PreInstalled'
 
+- task: BlackDuckSecurityScan@2
+  inputs:
+    scanType: 'polaris'
+    polarisServerUrl: 'https://poc.polaris.blackduck.com/'
+    polarisAccessToken: '$(POLARIS_TOKEN)'
+    polarisAssessmentTypes: 'SAST'
+    polarisApplicationName: 'Evan Test'
+    polarisProjectName: 'C++'
+
 - script: |
     cd data_structures-II/06-BST
     directory=$(pwd)
     pip install blackduck-c-cpp
     blackduck-c-cpp -bc "make" -d $directory -proj "Evan" -vers "cpp" -bd "https://expressonboarding.app.blackduck.com" -a $(AccessToken)
   displayName: 'Install CPP tool'
-
-
-#- task: BlackDuckSecurityScan@2
-#  inputs:
-#    scanType: 'blackducksca'
-#    blackduckScaUrl: 'https://expressonboarding.app.blackduck.com/'
-#    blackduckScaToken: '$(AccessToken)'
