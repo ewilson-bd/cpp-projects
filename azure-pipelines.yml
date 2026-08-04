@@ -39,5 +39,5 @@ steps:
     cd data_structures-II/06-BST
     directory=$(pwd)
     pip install blackduck-c-cpp
-    blackduck-c-cpp -d $directory -proj "Evan" -vers "Polaris-CPP" -bd "https://expressonboarding.app.blackduck.com" -a $(AccessToken) --cov_output_dir /tmp/polaris-idir --skip_build
+    blackduck-c-cpp -d $directory -proj "Evan" -vers "Polaris-CPP-2" -bd "https://expressonboarding.app.blackduck.com" -a $(AccessToken) --cov_output_dir /tmp/polaris-idir --skip_build
   displayName: 'Install CPP tool'
