@@ -1,0 +1,13 @@
+capture:
+  build:
+    clean-command: "make clean"
+    build-command: "make"
+
+  compiler-configuration:
+    cov-configure:
+      - [ --template, --compiler, gcc, --comptype, gcc ]
+      - [ --template, --compiler, g++, --comptype, g++ ]
+
+analyze:
+  checkers:
+    c-family-security: true
