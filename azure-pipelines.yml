@@ -8,8 +8,6 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-#variables:
-#- group: Polaris_Evan
 variables:
  - group: SCA_Evan
 
